@@ -1,0 +1,34 @@
+/* reset values */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "IBM Plex Mono";
+    font-weight: normal;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0);
+}
+
+#clock {
+    color: #EEEEEE;
+    background-color: rgba(17, 17, 17, 0.6);
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+#workspaces {
+    color: #EEEEEE;
+    background: rgba(17, 17, 17, 0.6);
+    padding-right: 3px;
+    padding-left: 3px;
+}
+
+#workspaces button:hover {
+    background: rgba(17, 17, 17, 0.9);
+}

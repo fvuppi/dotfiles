@@ -1,0 +1,61 @@
+# swayfx configuration file
+
+output HDMI-A-1 resolution 1920x1080@120Hz
+
+exec_always --no-startup-id swww-daemon && swww img /media/fullerene.jpg
+exec_always --no-startup-id waybar
+
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+
+set $mod Mod4
+
+set $term alacritty
+set $menu wofi --show drun
+
+gaps inner 15
+gaps outer 15
+
+default_border pixel 0
+default_floating_border normal
+focus_follows_mouse yes
+floating_modifier $mod
+
+bindsym $mod+Shift+r exec swaymsg reload
+
+bindsym $mod+Shift+e exit
+bindsym $mod+Shift+q kill
+
+bindsym $mod+Return exec $term
+bindsym $mod+d exec $menu
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+Shift+j resize shrink height 35px
+bindsym $mod+Shift+k resize grow height 35px
+bindsym $mod+Shift+h resize shrink width 35px
+bindsym $mod+Shift+l resize grow width 35px
+
+bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
+
+input "Logitech USB Receiver" {
+    accel_profile flat
+    pointer_accel 0
+}
+
+shadows enable
+shadows_on_csd disable
+shadow_blur_radius 1
+shadow_color #1b1b1bff
+shadow_offset 8 8
+shadow_inactive_color #000000ff
