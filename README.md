@@ -1,2 +1,2 @@
-#dot files
+# bye-bye arch.
 
