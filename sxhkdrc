@@ -1,0 +1,11 @@
+alt + Escape
+	pkill -USR1 -x sxhkd
+
+XF86AudioLowerVolume
+	amixer -M set Master 5%-
+
+XF86AudioRaiseVolume
+	amixer -M set Master 5%+
+
+XF86AudioMute
+	amixer -M set Master toggle
